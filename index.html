@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi City</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        a,a:visited,a:hover,a:active{
+            -webkit-backface-visibility:hidden;
+            backface-visibility:hidden;
+            position:relative;
+            transition:0.5s color ease;
+            text-decoration:none;
+            color:white;
+            font-size:1.2em;
+        }
+        a:hover{
+            color:#ffc600;
+        }
+        a.before:before,a.after:after{
+            content: "";
+            transition:0.5s all ease;
+            -webkit-backface-visibility:hidden;
+            backface-visibility:hidden;
+            position:absolute;
+        }
+        a.before:before{
+            top:-0.25em;
+        }
+        a.after:after{
+            bottom:-0.25em;
+        }
+        a.before:before,a.after:after{
+            height:2px;
+            height:0.2rem;
+            width:0;
+            background: #ffc600;
+        }
+        a.before:hover:before,a.after:hover:after{
+            width:100%;
+        }
+        .square{
+            box-sizing:border-box;
+            margin-left:-0.4em;
+            position:relative;
+            font-size:1.2em;
+            overflow:hidden;
+        }
+        .square a{
+            position:static;
+            font-size:100%;
+            padding: 0.6em;
+        }
+        .square:before,.square:after{
+            content: "";
+            box-sizing:border-box;
+            transition:0.25s all ease;
+            -webkit-backface-visibility:hidden;
+            backface-visibility:hidden;
+            position:absolute;
+            width:2px;
+            width:0.2rem;
+            height:0;
+            background:#ffc600;
+        }
+        .square:before{
+            left:0;
+            bottom:-0.2em;
+        }
+        .square.individual:before{
+            transition-delay:0.6s;
+        }
+        .square:after{
+            right:0;
+            top:-0.2em;
+        }
+        .square.individual:after{
+            transition-delay:0.2s;
+        }
+        .square a:before{
+            left:0;
+            transition:0.25s all ease;
+        }
+        .square a:after{
+            right:0;
+            transition:0.25s all ease;
+        }
+        .square.individual a:after{
+            transition:0.25s all ease 0.4s;
+        }
+        .square:hover:before,.square:hover:after{
+            height:calc(100% + 0.4em);
+        }
+        .square:hover a:before,.square:hover a:after{
+            width:100%;
+        }
+    </style>
+    <script>
+    
+    </script>
+</head>
+<body class="wapper">
+    <div class="container-fluid px-0">
+        <!-- Start banner -->
+        <div class="row mx-0 banner">
+            <div class="col-lg-6 col-md-6 col-12 content-banner">
+                <h3>THE LARGEST TAXI SERVICE</h3>
+                <h1>CITY TAXI</h1>
+                <h2>COMPANY</h2>
+                <button class="btn btn-large btn-light border">WHAT WE DO?</button>
+                <button class="btn btn-large btn-dark">JOIN US</button>
+            </div>
+            <div class="col-lg-6 col-md-6 col-12">
+                <a class="banner-img" href=""><img id="banner-img" src="img/taxi.png" alt="Taxi"></a>
+            </div>
+        </div>
+        <!-- End banner -->
+        <!-- Start selection -->
+        <div class="container-fluid selection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-12 text-center py-5">
+                        <h1>REPAIRS</h1>
+                        <a href=""><i class="fas fa-tools"></i></a>
+                        <h6>It long established</h6>
+                        <p class="small" style="color: gray;">Hello every body! My name is Son. I am learning from the Dong A University.<br> I hope to become a full-stack developer!!!</p>
+                        <span class="square individual">
+                            <a class="selection-link before after" href="#">MORE</a>
+                        </span>
+                    </div> 
+                    <div class="col-lg-4 col-md-4 col-12 text-center py-5">
+                        <h1>SPARES</h1>
+                        <a href=""><i class="fas fa-cogs"></i></a>
+                        <h6>It long established</h6>
+                        <p class="small" style="color: gray;">Hello every body! My name is Son. I am learning from the Dong A University.<br> I hope to become a full-stack developer!!!</p>
+                        <span class="square individual">
+                            <a class="selection-link before after" href="#">MORE</a>
+                        </span>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-12 text-center py-5">
+                        <h1>SALES</h1>
+                        <a href=""><i class="fas fa-shopping-cart"></i></a>
+                        <h6>It long established</h6>
+                        <p class="small" style="color: gray;">Hello every body! My name is Son. I am learning from the Dong A University.<br> I hope to become a full-stack developer!!!</p>
+                        <span class="square individual">
+                            <a class="selection-link before after" href="#">MORE</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End selection -->
+        <!-- Start slide-content-img -->
+        <div class="container line">
+            <div class="row w-100 mb-2">
+                <div class="col-lg-3 col-md-3 col-12"></div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="lined" style="display: inline-block;">
+                        <hr class="hr-step" style="display: inline-block;">
+                        <svg height="40" width="40">
+                            <circle cx="20" cy="20" r="10" stroke="#ffc600" stroke-width="3" fill="none" />
+                        </svg>
+                        <hr class="hr-step" style="display: inline-block;">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12"></div>
+            </div>  
+        </div>
+        <div class="container-fluid text-center content-slide">
+            <h1>POPULAR SERVICE</h1>
+            <h6>Service Is Our Attitude, And Attitude Is every thing</h6>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-12 mt-3">
+                    <a href=""><img class="img-border p-1" src="img/list4.jpg" alt=""></a>
+                    <h4 class="mt-3">CALLS ALL TAXI</h4>
+                    <hr class="hr-step" style="display: inline-block;">
+                    <p class="small">Hello every body! My name is Son. I am learning from the Dong A University.<br> I hope to become a full-stack developer!!!</p>
+                    <a class="book-now" href="">BOOK NOW</a>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 mt-3">
+                    <a href=""><img class="img-border p-1" src="img/list4.jpg" alt=""></a>
+                    <h4 class="mt-3">AIRPORTS TAXI</h4>
+                    <hr class="hr-step" style="display: inline-block;">
+                    <p class="small">Hello every body! My name is Son. I am learning from the Dong A University.<br> I hope to become a full-stack developer!!!</p>
+                    <a class="book-now" href="">BOOK NOW</a>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 mt-3">
+                    <a href=""><img class="img-border p-1" src="img/list4.jpg" alt=""></a>
+                    <h4 class="mt-3">ACCESSIBLE TAXI</h4>
+                    <hr class="hr-step" style="display: inline-block;">
+                    <p class="small">Hello every body! My name is Son. I am learning from the Dong A University.<br> I hope to become a full-stack developer!!!</p>
+                    <a class="book-now" href="">BOOK NOW</a>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 mt-3">
+                    <a href=""><img class="img-border p-1" src="img/list4.jpg" alt=""></a>
+                    <h4 class="mt-3">SKILLED DRIVER</h4>
+                    <hr class="hr-step" style="display: inline-block;">
+                    <p class="small">Hello every body! My name is Son. I am learning from the Dong A University.<br> I hope to become a full-stack developer!!!</p>
+                    <a class="book-now" href="">BOOK NOW</a>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5 line">
+            <div class="row w-100 mb-2">
+                <div class="col-lg-3 col-md-3 col-12"></div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="lined" style="display: inline-block;">
+                        <hr class="hr-step" style="display: inline-block;">
+                        <svg height="40" width="40">
+                            <circle cx="20" cy="20" r="10" stroke="#ffc600" stroke-width="3" fill="none" />
+                        </svg>
+                        <hr class="hr-step" style="display: inline-block;">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12"></div>
+            </div>  
+        </div>
+        <div class="container-fluid text-center content-slide">
+            <h1>CITY PRICING</h1>
+            <h6>Our Price Range Is Within Your Reach</h6>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-12 mt-3">
+                    <div class="content-slide-img">
+                        <div class="image">
+                            <a href=""><img class="img-city-slide" src="img/city.jpg" alt=""></a>
+                        </div>
+                        <h4 class="mt-3">NEW YORK CITY</h4>
+                        <hr class="hr-line" style="display: inline-block;">
+                        <h6 class="text-left">HOURLY<i class="fas fa-dollar-sign" style="float: right;">30</i></h6>
+                        <h6 class="text-left">WHOLE DAY<i class="fas fa-dollar-sign" style="float: right;">500</i></h6>
+                        <hr class="hr-line" style="display: inline-block;">
+                        <a class="book-now-city" href="">BOOK NOW</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 mt-3">
+                    <div class="content-slide-img">
+                        <div class="image">
+                            <a href=""><img class="img-city-slide" src="img/city.jpg" alt=""></a>
+                        </div>
+                        <h4 class="mt-3">SAN FRANCISCO</h4>
+                        <hr class="hr-line" style="display: inline-block;">
+                        <h6 class="text-left">HOURLY<i class="fas fa-dollar-sign" style="float: right;;">30</i></h6>
+                        <h6 class="text-left">WHOLE DAY<i class="fas fa-dollar-sign" style="float: right;;">500</i></h6>
+                        <hr class="hr-line" style="display: inline-block;">
+                        <a class="book-now-city" href="">BOOK NOW</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 mt-3">
+                    <div class="content-slide-img">
+                        <div class="image">
+                            <a href=""><img class="img-city-slide" src="img/city.jpg" alt=""></a>
+                        </div>
+                        <h4 class="mt-3">LOSS ANGELES</h4>
+                        <hr class="hr-line" style="display: inline-block;">
+                        <h6 class="text-left">HOURLY<i class="fas fa-dollar-sign" style="float: right;">30</i></h6>
+                        <h6 class="text-left">WHOLE DAY<i class="fas fa-dollar-sign" style="float: right;">500</i></h6>
+                        <hr class="hr-line" style="display: inline-block;">
+                        <a class="book-now-city" href="">BOOK NOW</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 mt-3">
+                    <div class="content-slide-img">
+                        <div class="image">
+                            <a href=""><img class="img-city-slide" src="img/city.jpg" alt=""></a>
+                        </div>
+                        <h4 class="mt-3"">WASHINGTON DC</h4>
+                        <hr class="hr-line" style="display: inline-block;">
+                        <h6 class="text-left">HOURLY<i class="fas fa-dollar-sign" style="float: right;">30</i></h6>
+                        <h6 class="text-left">WHOLE DAY<i class="fas fa-dollar-sign" style="float: right;">500</i></h6>
+                        <hr class="hr-line" style="display: inline-block;">
+                        <a class="book-now-city" href="">BOOK NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h4 style="color: black; padding-top: 10px">COPY BY JASON 2020 FROM HỒ ĐỨC LĨNH - CNTT - UDA</h4>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
